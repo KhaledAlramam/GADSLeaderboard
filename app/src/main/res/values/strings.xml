@@ -7,4 +7,9 @@
     <string name="badge_image_content_descriptiom">Badge Image</string>
     <string name="submit_actionbar_content_description">Logo for submit activity ActionBar</string>
     <string name="gads_logo_content_description">Gads logo</string>
+    <string name="project_submission">Project Submission</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="project_on_github">Project on GITHUB (link)</string>
 </resources>
