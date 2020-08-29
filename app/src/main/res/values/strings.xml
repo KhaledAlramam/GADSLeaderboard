@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">GADS Leaderboard</string>
+    <string name="leader_board">LeaderBoard</string>
+    <string name="submit">Submit</string>
+    <string name="learning_leaders">Learning Leaders</string>
+    <string name="skill_iq_leaders">Skill IQ Leaders</string>
+    <string name="badge_image_content_descriptiom">Badge Image</string>
+    <string name="submit_actionbar_content_description">Logo for submit activity ActionBar</string>
+    <string name="gads_logo_content_description">Gads logo</string>
 </resources>
