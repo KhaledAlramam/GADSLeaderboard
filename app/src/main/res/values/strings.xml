@@ -12,4 +12,6 @@
     <string name="last_name">Last Name</string>
     <string name="email">Email</string>
     <string name="project_on_github">Project on GITHUB (link)</string>
+    <string name="hours_text">%1$s learning hours, %2$s </string>
+    <string name="skill_iq_text">%1$s skill IQ score, %2$s </string>
 </resources>
