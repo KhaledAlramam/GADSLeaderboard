@@ -53,47 +53,29 @@
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_top"
-        app:tabGravity="fill"
-        app:tabIndicatorHeight="4sp"
-        app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="@color/white">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/learningLeadersTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/learning_leaders" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/skillIqTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/skill_iq_leaders" />
-
-    </com.google.android.material.tabs.TabLayout>
-
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tabLayout">
-    </FrameLayout>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_top">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_top"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="4sp"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/white" />
+    </androidx.viewpager.widget.ViewPager>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

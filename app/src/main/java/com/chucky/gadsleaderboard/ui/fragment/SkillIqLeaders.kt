@@ -36,6 +36,6 @@ class SkillIqLeaders : Fragment() {
     }
 
     companion object {
-        val SKILL_IQ_TYPE = "skillIq"
+        const val SKILL_IQ_TYPE = "skillIq"
     }
 }

@@ -37,6 +37,6 @@ class HoursLeadersFragment : Fragment() {
 
 
     companion object {
-        val HOURS_TYPE = "hours"
+        const val HOURS_TYPE = "hours"
     }
 }
