@@ -1,8 +1,9 @@
-package com.chucky.gadsleaderboard
+package com.chucky.gadsleaderboard.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.chucky.gadsleaderboard.R
 
 
 class SubmitActivity : AppCompatActivity() {
