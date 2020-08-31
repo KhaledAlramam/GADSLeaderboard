@@ -9,7 +9,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class DataRepository {
-    var client = RetrofitClient.webservice
+    private var client = RetrofitClient.webservice
+    private var client2 = RetrofitClient.webservice2
 
 
     fun getSkillIqLeaders(): LiveData<List<DataDTO>> {
@@ -41,6 +42,28 @@ class DataRepository {
             override fun onFailure(call: Call<List<DataDTO>>, t: Throwable) {
             }
         })
+        return liveData
+    }
+
+    fun submitProject(
+        firstName: String,
+        lastName: String,
+        emailAddress: String,
+        link: String
+    ): LiveData<Int> {
+        val liveData = MutableLiveData<Int>()
+        client2.submitProject(firstName, lastName, emailAddress, link)
+            .enqueue(object : Callback<Void> {
+
+                override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                    if (response.isSuccessful) liveData.postValue(1)
+                }
+
+                override fun onFailure(call: Call<Void>, t: Throwable) {
+                    liveData.postValue(0)
+                }
+
+            })
         return liveData
     }
 }
