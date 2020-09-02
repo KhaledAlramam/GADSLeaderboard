@@ -79,16 +79,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="@dimen/medium_margin"
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/firstNameEt"
                     style="@style/submit_et"
                     android:autofillHints="Name"
                     android:hint="@string/first_name"
                     android:inputType="textPersonName" />
 
                 <EditText
+                    android:id="@+id/lastNameEt"
                     style="@style/submit_et"
                     android:autofillHints="Name"
                     android:hint="@string/last_name"
@@ -96,10 +99,12 @@
             </LinearLayout>
 
             <EditText
+                android:id="@+id/emailEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginBottom="@dimen/medium_margin"
                 android:layout_marginEnd="8dp"
 
                 android:autofillHints="Email"
@@ -111,11 +116,13 @@
                 android:textSize="16sp" />
 
             <EditText
+                android:id="@+id/projectLinkEt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="@dimen/large_margin"
                 android:layout_marginEnd="8dp"
+                android:layout_marginBottom="@dimen/medium_margin"
                 android:autofillHints="Link"
                 android:background="@drawable/rounded_edittext"
                 android:hint="@string/project_on_github"
@@ -125,8 +132,16 @@
                 android:textSize="16sp" />
 
             <Button
+                android:id="@+id/submitProjectBtn"
+                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_marginTop="@dimen/xlarge_margin"
+                android:background="@drawable/round_corner_background"
+                android:backgroundTint="@color/yellow_text"
+                android:paddingStart="@dimen/xxlarge_margin"
+                android:paddingEnd="@dimen/xxlarge_margin"
+                android:text="@string/submit"
+                android:textColor="@color/white" />
 
         </LinearLayout>
     </ScrollView>

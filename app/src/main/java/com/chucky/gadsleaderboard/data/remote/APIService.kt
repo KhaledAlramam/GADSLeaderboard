@@ -3,6 +3,7 @@ package com.chucky.gadsleaderboard.data.remote
 import com.chucky.gadsleaderboard.data.model.DataDTO
 import retrofit2.Call
 import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 
@@ -14,6 +15,7 @@ interface APIService {
     fun getHoursLeaders(): Call<List<DataDTO>>
 
     @POST("/1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse")
+    @FormUrlEncoded
     fun submitProject(
         @Field("entry.1877115667") firstName: String,
         @Field("entry.2006916086") lastName: String,
