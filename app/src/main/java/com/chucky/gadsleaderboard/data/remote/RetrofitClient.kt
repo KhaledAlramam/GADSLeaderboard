@@ -1,8 +1,11 @@
 package com.chucky.gadsleaderboard.data.remote
 
+import com.github.simonpercic.oklog3.OkLogInterceptor
 import com.google.gson.GsonBuilder
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
 
 class RetrofitClient {
     companion object {
@@ -15,8 +18,19 @@ class RetrofitClient {
 
 
         val webservice2: APIService by lazy {
+            // create an instance of OkLogInterceptor using a builder()
+
+            // create an instance of OkLogInterceptor using a builder()
+            val okLogInterceptor = OkLogInterceptor.builder().build()
+
+            val okHttpBuilder = OkHttpClient.Builder()
+
+            okHttpBuilder.addInterceptor(okLogInterceptor)
+
+            val okHttpClient = okHttpBuilder.build()
             Retrofit.Builder()
-                .baseUrl("https://docs.google.com/forms/d/e/")
+                .baseUrl("https://docs.google.com/")
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
                 .build().create(APIService::class.java)
         }

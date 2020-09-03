@@ -14,7 +14,7 @@ interface APIService {
     @GET("/api/hours")
     fun getHoursLeaders(): Call<List<DataDTO>>
 
-    @POST("/1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse")
+    @POST("/forms/d/e/1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse")
     @FormUrlEncoded
     fun submitProject(
         @Field("entry.1877115667") firstName: String,
