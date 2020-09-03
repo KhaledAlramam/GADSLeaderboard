@@ -14,4 +14,7 @@
     <string name="project_on_github">Project on GITHUB (link)</string>
     <string name="hours_text">%1$s learning hours, %2$s </string>
     <string name="skill_iq_text">%1$s skill IQ score, %2$s </string>
+    <string name="close_dialog_cd">Close dialog</string>
+    <string name="yes">Yes</string>
+    <string name="are_you_sure">Are you sure</string>
 </resources>

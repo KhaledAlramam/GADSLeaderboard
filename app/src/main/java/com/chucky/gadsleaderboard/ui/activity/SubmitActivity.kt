@@ -1,7 +1,14 @@
 package com.chucky.gadsleaderboard.ui.activity
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
+import android.view.Window
+import android.view.WindowManager
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -44,20 +51,63 @@ class SubmitActivity : AppCompatActivity() {
                     .show()
                 return@setOnClickListener
             }
-            Log.e(TAG, "onCreate: ")
-
-            viewModel.postProject(
-                firstNameEt.text.toString(),
-                lastNameEt.text.toString(),
-                emailEt.text.toString(),
-                projectLinkEt.text.toString()
-            ).observe(this, Observer {
-                if (it == 1) {
-                    Log.e(TAG, "onCreate: success")
-                } else if (it == 0) {
-                    Log.e(TAG, "onCreate: Fail")
-                }
-            })
+            showConfirmDialog()
         }
+    }
+
+    private fun showConfirmDialog() {
+        val confirmDialog = Dialog(this, android.R.style.Theme_Dialog)
+        confirmDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        confirmDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+
+        confirmDialog.setContentView(R.layout.dialog_submit)
+
+        confirmDialog.findViewById<Button>(R.id.confirmSubmitBtn).setOnClickListener {
+            confirmDialog.dismiss()
+            doCall()
+
+        }
+        confirmDialog.findViewById<ImageView>(R.id.icClose).setOnClickListener {
+            confirmDialog.dismiss()
+        }
+        confirmDialog.show()
+        confirmDialog.window?.setLayout(
+            WindowManager.LayoutParams.MATCH_PARENT,
+            WindowManager.LayoutParams.WRAP_CONTENT
+        )
+    }
+
+    private fun doCall() {
+        viewModel.postProject(
+            firstNameEt.text.toString(),
+            lastNameEt.text.toString(),
+            emailEt.text.toString(),
+            projectLinkEt.text.toString()
+        ).observe(this, Observer {
+            if (it == 1) {
+                showResultDialog(R.drawable.ic_cloud_done, "Submission successful")
+            } else if (it == 0) {
+                showResultDialog(R.drawable.ic_warning, "Submission not successful")
+            }
+        })
+    }
+
+    private fun showResultDialog(imgRes: Int, txt: String) {
+        val resultDialog = Dialog(this, android.R.style.Theme_Dialog)
+        this.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        with(resultDialog) {
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            requestWindowFeature(Window.FEATURE_NO_TITLE)
+            setContentView(R.layout.dialog_result)
+            findViewById<ImageView>(R.id.resultImg).setImageResource(imgRes)
+            findViewById<TextView>(R.id.resultTxt).text = txt
+        }
+
+        resultDialog.show()
+        resultDialog.window?.setLayout(
+            WindowManager.LayoutParams.MATCH_PARENT,
+            WindowManager.LayoutParams.WRAP_CONTENT
+        )
     }
 }

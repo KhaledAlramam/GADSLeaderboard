@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/xlarge_margin"
+    android:background="@drawable/round_corner_background"
+    android:orientation="vertical"
+    android:padding="@dimen/large_margin">
+
+    <ImageView
+        android:id="@+id/resultImg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/medium_margin"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:id="@+id/resultTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/are_you_sure"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+</LinearLayout>
