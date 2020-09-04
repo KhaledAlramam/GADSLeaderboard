@@ -12,7 +12,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.chucky.gadsleaderboard.R
 import com.chucky.gadsleaderboard.ui.SubmitProjectViewModel
@@ -22,8 +21,7 @@ import kotlinx.android.synthetic.main.activity_submit.*
 
 class SubmitActivity : AppCompatActivity() {
 
-    lateinit var viewModel: SubmitProjectViewModel
-    private val TAG = this::class.java.simpleName
+    private lateinit var viewModel: SubmitProjectViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,7 +81,7 @@ class SubmitActivity : AppCompatActivity() {
             lastNameEt.text.toString(),
             emailEt.text.toString(),
             projectLinkEt.text.toString()
-        ).observe(this, Observer {
+        ).observe(this, {
             if (it == 1) {
                 showResultDialog(R.drawable.ic_cloud_done, "Submission successful")
             } else if (it == 0) {

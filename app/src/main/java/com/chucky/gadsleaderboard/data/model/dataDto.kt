@@ -1,7 +1,7 @@
 package com.chucky.gadsleaderboard.data.model
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
 
 data class DataDTO(
     @SerializedName("name")

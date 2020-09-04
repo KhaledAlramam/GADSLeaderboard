@@ -17,4 +17,5 @@
     <string name="close_dialog_cd">Close dialog</string>
     <string name="yes">Yes</string>
     <string name="are_you_sure">Are you sure</string>
+    <string name="question_mark">\?</string>
 </resources>

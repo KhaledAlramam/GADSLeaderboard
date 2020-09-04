@@ -13,7 +13,8 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_margin="@dimen/medium_margin"
-        android:adjustViewBounds="true" />
+        android:adjustViewBounds="true"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/resultTxt"

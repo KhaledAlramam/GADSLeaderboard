@@ -11,7 +11,11 @@ import com.chucky.gadsleaderboard.R
 import com.chucky.gadsleaderboard.data.model.DataDTO
 import com.chucky.gadsleaderboard.ui.fragment.HoursLeadersFragment
 
-class LeadersAdapter(var context: Context, var mData: List<DataDTO>, val type: String) :
+class LeadersAdapter(
+    private var context: Context,
+    private var mData: List<DataDTO>,
+    private val type: String
+) :
     RecyclerView.Adapter<LeadersAdapter.LeaderViewHolder>() {
 
 
