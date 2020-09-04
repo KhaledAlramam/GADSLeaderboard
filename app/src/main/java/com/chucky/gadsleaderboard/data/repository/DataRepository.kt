@@ -1,5 +1,6 @@
 package com.chucky.gadsleaderboard.data.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.chucky.gadsleaderboard.data.model.DataDTO
@@ -56,6 +57,7 @@ class DataRepository {
             .enqueue(object : Callback<Void> {
 
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                    Log.e("TAG", "onResponse: " + response.code())
                     if (response.isSuccessful) liveData.postValue(1)
                 }
 
