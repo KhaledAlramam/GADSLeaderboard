@@ -1,22 +1,16 @@
 package com.chucky.gadsleaderboard.data.model
 
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class DataDTO(
-    @SerializedName("name")
-    @Expose
+    @field:Json(name = "name")
     val name: String,
-    @SerializedName("hours")
-    @Expose
+    @field:Json(name = "hours")
     val hours: Int = 0,
-    @SerializedName("score")
-    @Expose
-    var score: Int = 0,
-    @SerializedName("country")
-    @Expose
+    @field:Json(name = "score")
+    val score: Int = 0,
+    @field:Json(name = "country")
     val country: String,
-    @SerializedName("badgeUrl")
-    @Expose
+    @field:Json(name = "badgeUrl")
     val badgeUrl: String
 )

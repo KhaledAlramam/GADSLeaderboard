@@ -1,10 +1,9 @@
 package com.chucky.gadsleaderboard.data.remote
 
 import com.github.simonpercic.oklog3.OkLogInterceptor
-import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 
 class RetrofitClient {
@@ -12,7 +11,7 @@ class RetrofitClient {
         val webservice: APIService by lazy {
             Retrofit.Builder()
                 .baseUrl("https://gadsapi.herokuapp.com/")
-                .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
+                .addConverterFactory(MoshiConverterFactory.create())
                 .build().create(APIService::class.java)
         }
 
@@ -28,7 +27,7 @@ class RetrofitClient {
             Retrofit.Builder()
                 .baseUrl("https://docs.google.com/")
                 .client(okHttpClient)
-                .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
+                .addConverterFactory(MoshiConverterFactory.create())
                 .build().create(APIService::class.java)
         }
 
