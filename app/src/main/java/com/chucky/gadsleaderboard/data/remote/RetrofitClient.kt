@@ -18,9 +18,6 @@ class RetrofitClient {
 
 
         val webservice2: APIService by lazy {
-            // create an instance of OkLogInterceptor using a builder()
-
-            // create an instance of OkLogInterceptor using a builder()
             val okLogInterceptor = OkLogInterceptor.builder().build()
 
             val okHttpBuilder = OkHttpClient.Builder()
